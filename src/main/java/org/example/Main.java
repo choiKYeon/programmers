@@ -1,22 +1,25 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
-        String[] str_list = {"abc", "def", "ghi"};
-        String ex = "ef";
-        StringBuilder sb = new StringBuilder();
+        String my_string = "banana";
+        String is_suffix = "ana";
 
-        for (int i = 0; i < str_list.length; i++){
-            if (str_list[i].contains(ex)){
-            }else {
-                sb.append(str_list[i]);
+        for (int i = my_string.length() - 1; i >= 0; i--) {
+            if (my_string.endsWith(is_suffix)) {
+                System.out.println(1);
+            } else {
+                System.out.println(0);
+
+                continue;
             }
+
+
+            break;
         }
-        System.out.println(sb.toString());
     }
 }
 
