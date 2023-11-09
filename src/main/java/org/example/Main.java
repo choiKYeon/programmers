@@ -6,16 +6,17 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
-        String[] todo_list = {"problemsolving", "practiceguitar", "swim", "studygraph"};
-        boolean[] finished = {true, false, true, false};
+        String[] str_list = {"abc", "def", "ghi"};
+        String ex = "ef";
+        StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < todo_list.length; i++){
-            if (finished[i] == true){
-                list.add(todo_list[i]);
+        for (int i = 0; i < str_list.length; i++){
+            if (str_list[i].contains(ex)){
+            }else {
+                sb.append(str_list[i]);
             }
         }
-        System.out.println(list);
+        System.out.println(sb.toString());
     }
 }
 
