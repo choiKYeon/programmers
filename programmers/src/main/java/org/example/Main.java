@@ -5,14 +5,15 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-      List<Integer> list = new ArrayList<>();
-      int[] numlist = {4, 5, 6, 7, 8, 9, 10, 11, 12};
-      int n = 3;
-      for (int i = 0; i < numlist.length; i++){
-          if (numlist[i] % n == 0){
-              list.add(numlist[i]);
-          }
-      }
-        System.out.println(list);
+        String answer = "";
+        String cipher = "dfjardstddetckdaccccdegk";
+        String[] str = cipher.split("");
+        int code = 4;
+        for (int i = 0; i <= cipher.length(); i++){
+            if (i % 4 == 0 && i != 0){
+                answer += str[i - 1];
+            }
+        }
+        System.out.println(answer);
     }
 }
