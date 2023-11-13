@@ -2,16 +2,17 @@ package org.example;
 
 import java.util.*;
 
+
 public class Main {
     public static void main(String[] args) {
-        int answer = 0;
-        if (a % 2 != 0 && b % 2 != 0){
-            answer = a*a + b*b;
-        } else if (a % 2 != 0 || b % 2 != 0) {
-            answer = 2 * (a + b);
-        } else if () {
-            answer = Math.abs(a - b);
-        }
-
+      List<Integer> list = new ArrayList<>();
+      int[] numlist = {4, 5, 6, 7, 8, 9, 10, 11, 12};
+      int n = 3;
+      for (int i = 0; i < numlist.length; i++){
+          if (numlist[i] % n == 0){
+              list.add(numlist[i]);
+          }
+      }
+        System.out.println(list);
     }
 }
