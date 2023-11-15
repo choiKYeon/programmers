@@ -4,30 +4,28 @@ import java.util.*;
 // 2진수 변환 Integer.toBinaryString
 public class Main {
     public static void main(String[] args) {
-       int n = 15;
-       int a = 0;
-       int result = 0;
-       String num = Integer.toBinaryString(n);
-       for (int i = 0; i < num.length(); i++){
-           if (String.valueOf(num.charAt(i)).equals("1")){
-               a++;
-           }
-       }
-        int n2 = n;
-        int b = 0;
-       while (true) {
-           n2++;
-           String num2 = Integer.toBinaryString(n2);
-           for (int j = 0; j < num2.length(); j++) {
-               if (String.valueOf(num2.charAt(j)).equals("1")){
-                   b++;
-               }
-           }
-           if (a == b){
-               result = n2;
-               break;
-           } else {b = 0;}
-       }
-        System.out.println(result);
+        String s = "baabaa";
+        int answer = -1;
+        char[] carr = s.toCharArray();
+        Stack<Character> stack = new Stack<>();
+
+        for (int i=0;i<carr.length;i++) {
+            char c = carr[i];
+            // 스택이 비어있다면 현재 문자는 반복될 일이 없으므로 push
+            if (stack.isEmpty()) stack.push(c);
+                // 스택이 비어있지 않다면
+            else {
+                // 스택의 top확인(peek) - 만약 현재 문자와 같다면 반복이므로 스택에서 pop하고 현재 문자도 스택에 넣지 않음
+                // 이렇게 되면 스택에는 반복이 발생하는 이전문자와 현재문자 모두 들어가지 않게 됨 (반복제거)
+                if (stack.peek() == c) {
+                    stack.pop();
+                    // 스택의 top이 현재 문자와 다르다면 반복이 아니므로 push
+                } else {
+                    stack.push(c);
+                }
+            }
+        }
+        // 스택에 남아있는 값들은 반복되지 않는 값들임 즉, 비어있어다면 모두 짝지어 반복된 것
+        System.out.println(stack.isEmpty() ? 1 : 0);
     }
 }
