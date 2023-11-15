@@ -1,31 +1,33 @@
 package org.example;
 
 import java.util.*;
-
+// 2진수 변환 Integer.toBinaryString
 public class Main {
     public static void main(String[] args) {
-
-
-
-        String s = "3people unFollowed me";
-        String lastAnswer = "";
-        String s1= s.toLowerCase();
-        String[] strList = s1.split(" ");
-        int j = 0;
-        for (int i = 0; i < strList.length; i++){
-            String[] strList2 = strList[i].split("");
-            String s2 = " " + strList2[0].toUpperCase();
-
-            String answer = "";
-                for (int q = 1; q < strList2.length; q++) {
-                    if (q != 0) {
-                        answer += strList2[q];
-                    }
-                }
-            System.out.println(answer);
-            lastAnswer += s2 + answer;
-        }
-        System.out.println(lastAnswer.trim());
-
+       int n = 15;
+       int a = 0;
+       int result = 0;
+       String num = Integer.toBinaryString(n);
+       for (int i = 0; i < num.length(); i++){
+           if (String.valueOf(num.charAt(i)).equals("1")){
+               a++;
+           }
+       }
+        int n2 = n;
+        int b = 0;
+       while (true) {
+           n2++;
+           String num2 = Integer.toBinaryString(n2);
+           for (int j = 0; j < num2.length(); j++) {
+               if (String.valueOf(num2.charAt(j)).equals("1")){
+                   b++;
+               }
+           }
+           if (a == b){
+               result = n2;
+               break;
+           } else {b = 0;}
+       }
+        System.out.println(result);
     }
 }
